@@ -8,42 +8,54 @@ import "./index.css";
 //formatting
 //Nested Components, React Tools
 //css
-const firstBook = {
+
+// const firstBook = {
+//   title: "I am firstBook title",
+//   img: "https://images-na.ssl-images-amazon.com/images/I/51P8ZmjEhmL._AC_UL600_SR600,400_.jpg",
+//   author: "I am firstBook author",
+// };
+// const secondBook = {
+//   title: "I am secondBook title",
+//   img: "https://images-na.ssl-images-amazon.com/images/I/91n7p-j5aqL._AC_UL600_SR600,400_.jpg",
+//   author: "I am secondBook author",
+// };
+
+//Use of lists(simple list)
+const books = [
+  {
   title: "I am firstBook title",
   img: "https://images-na.ssl-images-amazon.com/images/I/51P8ZmjEhmL._AC_UL600_SR600,400_.jpg",
   author: "I am firstBook author",
-};
-const secondBook = {
+},
+ {
   title: "I am secondBook title",
   img: "https://images-na.ssl-images-amazon.com/images/I/91n7p-j5aqL._AC_UL600_SR600,400_.jpg",
   author: "I am secondBook author",
-};
+},
+]
 
-function BookList() { 
+function BookList() {
   return (
     <>
       <section className="booklist">
-        <Book
-          img={firstBook.img}
-          title={firstBook.title}
-          author={firstBook.author}
-        />
-        <Book
-          img={secondBook.img}
-          title={secondBook.title}
-          author={secondBook.author}
-        />
+        {books.map((book)=>{
+          const {img, title, author} =book;
+          return (
+            <Book book ={book}></Book>
+          );
+        })}
       </section>
     </>
   );
 }
-const Book = ({img, title, author}) => {
-  //const {img, title, author} = props
+const Book = (props) => {
+  const {img, title, author} = props.book
   return (
     <article className="book">
       <img src={img} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
+      
     </article>
   );
 };
