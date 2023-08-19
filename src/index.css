@@ -18,7 +18,7 @@ body{
 .book{
     background: #fff;
     border-radius: 1rem;
-    padding: 1rem, 2rem;
+    padding: 20px;
 }
 .book h1{
     margin-top: 0.5rem;
@@ -30,6 +30,14 @@ body{
 }
 .book p{
     margin-top: 0.5rem;
+}
+button{
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: grey;
+    margin-right: 10px;
+    margin-top: 10px;
 }
 @media  screen and (min-width: 768px) {
     .booklist{
